@@ -1,0 +1,25 @@
+* {
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+}
+
+html {
+  --navbar-height: 4rem;
+  --main-color: navy;
+  --white: whitesmoke;
+}
+
+body {
+  height: 100svh;
+  padding-bottom: var(--navbar-height);
+}
+
+main {
+  justify-content: center;
+  display: flex;
+}
+
+.material-symbols-outlined {
+  font-size: 2rem;
+}

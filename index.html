@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Player</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/songList.css" />
+  </head>
+  <body>
+    <main>
+      <section class="song-list"></section>
+      <section class="audio-player-container">
+        <audio class="audio-player" controls>
+          <source
+            src="assets/songs/Not_My_Problem_-_All_My_Friends_Hate_Me.mp3"
+            type="audio/mpeg"
+          />
+        </audio>
+      </section>
+    </main>
+    <nav><span class="nav-item material-symbols-outlined"> music_note </span></nav>
+
+    <script src="js/index.js" type="module"></script>
+  </body>
+</html>
