@@ -1,0 +1,218 @@
+:root {
+	--main: rgba(49, 49, 67, 0.5);
+	--full: rgb(49, 49, 67);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html,
+body {
+	font-family: "Roboto", Arial, Helvetica, sans-serif;
+	background: linear-gradient(133deg, rgb(0, 62, 137) 0%, rgb(0, 16, 32) 100%);
+	color: white;
+	width: 100%;
+	height: 100%;
+	overflow-x: hidden;
+}
+
+body {
+	padding-bottom: 100px;
+}
+
+.player {
+	background: rgba(0, 0, 0, 0.6);
+	display: block;
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	height: 80px;
+	z-index: 10;
+}
+
+.player .thumb {
+	width: 60px;
+	height: 60px;
+	float: left;
+	margin-left: 10px;
+	margin-top: 10px;
+	margin-right: 20px;
+}
+
+.player .thumb img {
+	width: 100%;
+}
+
+.player .name {
+	font-size: 18px;
+	margin-bottom: 5px;
+	margin-top: 18px;
+}
+
+.player .artist {
+	color: rgba(255, 255, 255, 0.5);
+}
+
+.player .length {
+	float: right;
+	margin-right: 20px;
+	margin-top: 33px;
+	color: yellow;
+}
+
+.volume {
+	float: right;
+}
+
+.player .play {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	bottom: 0;
+	width: 88px;
+	height: 88px;
+	line-height: 60px;
+	text-align: center;
+	border-radius: 100%;
+	transform-origin: center left;
+	background: linear-gradient(180deg, rgba(29, 117, 255, 1) 0%, rgba(0, 56, 112, 1) 100%);
+}
+.play:hover {
+	cursor: pointer;
+	scale: 1.2;
+	box-shadow: 0 0 128px 0 yellow, 0 0 8px 1px rgba(255, 255, 255, 0.3) inset;
+}
+.prev {
+	text-align: center;
+	position: absolute;
+	left: calc(50% - 100px);
+	transform: translateX(-50%);
+	bottom: 0;
+	width: 60px;
+	height: 60px;
+	line-height: 60px;
+}
+.next {
+	text-align: center;
+	position: absolute;
+	left: calc(50% + 100px);
+	transform: translateX(-50%);
+	bottom: 0;
+	width: 60px;
+	height: 60px;
+	line-height: 60px;
+}
+.list {
+	width: 80%;
+	padding-left: 20px;
+	padding-right: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	height: 40vh;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+.list .track {
+	width: 100%;
+	display: block;
+	background: rgba(0, 0, 0, 0.2);
+	border-radius: 8px;
+	margin: 5px;
+	padding: 12px;
+	height: 72px;
+}
+
+.list .track img {
+	width: 50px;
+	float: left;
+	margin-right: 20px;
+}
+
+.list .track .length {
+	float: right;
+	margin-right: 10px;
+	margin-top: 16px;
+	color: rgba(255, 255, 255, 0.5);
+}
+
+.list .track .by {
+	margin-top: 6px;
+}
+
+.list .track .by .artist {
+	margin-top: 8px;
+	color: rgba(255, 255, 255, 0.5);
+}
+
+.list .track:hover {
+	background: rgba(0, 0, 0, 0.4);
+	cursor: pointer;
+}
+
+.list .track:hover .name {
+	color: yellow;
+}
+
+.playing {
+	margin-top: 40px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	margin-bottom: 60px;
+}
+.playing .thumb {
+	aspect-ratio: 1/1;
+	width: 200px;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 100%;
+	overflow: hidden;
+	margin-bottom: 20px;
+}
+
+.playing .thumb img {
+	animation: playingimg 0.7s 1 forwards;
+}
+.playing .thumb {
+	animation: playingthumb 0.7s 1 forwards;
+}
+@keyframes playingimg {
+	0% {
+		scale: 2;
+	}
+	100% {
+		scale: 1;
+	}
+}
+
+@keyframes playingthumb {
+	0% {
+		box-shadow: 0 0 128px 0 yellow, 0 0 8px 1px rgba(255, 255, 255, 0.3) inset;
+
+		outline: 20px solid yellow;
+	}
+	100% {
+		box-shadow: 0 0 0px 0 yellow, 0 0 8px 1px rgba(255, 255, 255, 0) inset;
+
+		outline: 0px solid transparent;
+	}
+}
+
+.playing h2 {
+	font-weight: normal;
+	color: rgba(255, 255, 255, 0.5);
+}
+
+@media screen and (max-width: 960px) {
+	.player .thumb,
+	.player .name,
+	.player .artist,
+	.player .length {
+		display: none;
+	}
+}
