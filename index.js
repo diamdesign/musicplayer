@@ -113,9 +113,9 @@ function updateTime(audio) {
 
 		playerLength.textContent = formattedTimeLeft;
 
-		audio.addEventListener("ended", () => {
+		if (currentTime >= duration) {
 			nextTrack();
-		});
+		}
 	});
 }
 
@@ -206,26 +206,27 @@ tracks.forEach((track) => {
 var randomArray = [];
 
 function nextTrack() {
-	let activeSong;
+	let activeSong = document.querySelector(".active");
 	let nextTrack;
+
 	if (shuffleOn) {
 		do {
 			random = Math.floor(Math.random() * playlist.children.length);
 			nextTrack = playlist.children[random];
-		} while (nextTrack.classList.contains("active"));
-
+		} while (nextTrack === activeSong);
 		randomArray.push(random);
 	} else {
-		activeSong = document.querySelector(".active");
 		nextTrack = activeSong.nextElementSibling;
+
+		// If there is no next sibling, check if looping is enabled
+		if (!nextTrack && loopOn) {
+			nextTrack = document.querySelector(".track:first-child");
+		}
 	}
 
+	// If there is still no next track, return
 	if (!nextTrack) {
-		if (loopOn) {
-			nextTrack = document.querySelector(".track:first-child");
-		} else {
-			return;
-		}
+		return;
 	}
 
 	let audio = nextTrack.querySelector("audio");
@@ -303,6 +304,7 @@ repeatbtn.addEventListener("click", () => {
 	}
 });
 
+/*
 // Created with help of AI all of the below
 let isDragging = false;
 
@@ -340,7 +342,7 @@ function handleMouseUp() {
 	document.removeEventListener("mousemove", handleMouseMove);
 	document.removeEventListener("mouseup", handleMouseUp);
 }
-
+*/
 function handleTimeClick(e) {
 	let currentElement = document.querySelector(".active");
 	let audio = currentElement.querySelector("audio");
