@@ -11,7 +11,7 @@
 
 html,
 body {
-	font-family: "Roboto", Arial, Helvetica, sans-serif;
+	font-family: "Roboto", sans-serif;
 	background: linear-gradient(133deg, rgb(0, 62, 137) 0%, rgb(0, 16, 32) 100%);
 	color: white;
 	width: 100%;
@@ -21,6 +21,28 @@ body {
 
 body {
 	padding-bottom: 100px;
+}
+.background {
+	content: "";
+	display: block;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	z-index: 0;
+}
+
+.background img {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	filter: blur(20px);
+	width: 100%;
+}
+
+.container {
+	position: relative;
+	z-index: 2;
 }
 
 .player {
@@ -115,6 +137,7 @@ body {
 	height: 40vh;
 	overflow-y: scroll;
 	overflow-x: hidden;
+	z-index: 10;
 }
 
 .list .track {
@@ -124,11 +147,11 @@ body {
 	border-radius: 8px;
 	margin: 5px;
 	padding: 12px;
-	height: 72px;
+	height: 102px;
 }
 
 .list .track img {
-	width: 50px;
+	width: 80px;
 	float: left;
 	margin-right: 20px;
 }
@@ -136,22 +159,34 @@ body {
 .list .track .length {
 	float: right;
 	margin-right: 10px;
-	margin-top: 16px;
+	margin-top: 33px;
 	color: rgba(255, 255, 255, 0.5);
 }
 
 .list .track .by {
-	margin-top: 6px;
+	margin-top: 20px;
+}
+.list .track .by .name {
+	font-weight: 500;
+	font-size: 18px;
+}
+.list .track .by .artist {
+	margin-top: 16px;
+	color: rgba(255, 255, 255, 0.5);
 }
 
-.list .track .by .artist {
-	margin-top: 8px;
-	color: rgba(255, 255, 255, 0.5);
+.list .active {
+	background: #0d53b0;
 }
 
 .list .track:hover {
 	background: rgba(0, 0, 0, 0.4);
 	cursor: pointer;
+}
+
+.list .active:hover {
+	background: #0d53b0;
+	cursor: default;
 }
 
 .list .track:hover .name {
