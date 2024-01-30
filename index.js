@@ -113,9 +113,9 @@ function updateTime(audio) {
 
 		playerLength.textContent = formattedTimeLeft;
 
-		if (currentTime >= duration) {
+		audio.addEventListener("ended", () => {
 			nextTrack();
-		}
+		});
 	});
 }
 
