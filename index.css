@@ -4,9 +4,15 @@
 }
 
 * {
+	user-select: none;
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+}
+
+h1,
+h2 {
+	user-select: all;
 }
 
 html,
@@ -57,7 +63,7 @@ body {
 	z-index: 2;
 	display: grid;
 	grid-template-rows: 1fr 1fr;
-	height: 100%;
+	height: calc(100% - 20px);
 }
 
 .time {
@@ -75,6 +81,7 @@ body {
 	background: rgba(255, 255, 0, 0.472);
 	display: block;
 	height: 10px;
+	width: 100%;
 }
 .tracker {
 	width: 10px;
@@ -225,7 +232,9 @@ body {
 	display: flex;
 	justify-items: center;
 	align-items: center;
+	z-index: 1;
 }
+
 .loop {
 	text-align: center;
 	position: absolute;
@@ -256,6 +265,7 @@ body {
 .shuffle span,
 .loop span,
 .volume span {
+	pointer-events: auto;
 	width: 100%;
 	display: flex;
 	align-self: center;
@@ -286,7 +296,7 @@ body {
 	overflow-y: scroll;
 	overflow-x: hidden;
 	z-index: 10;
-	scrollbar-width: thin;
+	scrollbar-width: 12px;
 	scrollbar-color: #3f51b6 transparent;
 }
 
@@ -362,7 +372,7 @@ body {
 	margin-left: auto;
 	margin-right: auto;
 	text-align: center;
-	margin-bottom: 60px;
+	margin-bottom: 40px;
 	scale: 1;
 }
 .playing .thumb {
@@ -432,9 +442,14 @@ body {
 	border-radius: 5px 5px 0 0;
 }
 
+.on {
+	color: rgb(37, 143, 255);
+	opacity: 1;
+}
+
 /* Firefox */
 * {
-	scrollbar-width: thin;
+	scrollbar-width: 12px;
 	scrollbar-color: #3f51b6 transparent;
 }
 
