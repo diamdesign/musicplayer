@@ -139,9 +139,12 @@ body {
 	left: calc(50% - 100px);
 	transform: translateX(-50%);
 	bottom: 0;
-	width: 60px;
-	height: 60px;
-	line-height: 60px;
+	width: 80px;
+	height: 80px;
+	opacity: 0.4;
+	display: flex;
+	justify-items: center;
+	align-items: center;
 }
 .next {
 	text-align: center;
@@ -149,10 +152,31 @@ body {
 	left: calc(50% + 100px);
 	transform: translateX(-50%);
 	bottom: 0;
-	width: 60px;
-	height: 60px;
-	line-height: 60px;
+	width: 80px;
+	height: 80px;
+	opacity: 0.4;
+	display: flex;
+	justify-items: center;
+	align-items: center;
 }
+
+.prev span,
+.next span {
+	width: 100%;
+	display: flex;
+	align-self: center;
+	align-content: center;
+	justify-content: center;
+	text-align: center;
+	scale: 1.5;
+}
+
+.prev:hover,
+.next:hover {
+	opacity: 1;
+	cursor: pointer;
+}
+
 .list {
 	width: 80%;
 	padding-left: 20px;
