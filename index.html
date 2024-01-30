@@ -10,7 +10,10 @@
 			href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;0,900;1,300&display=swap"
 			rel="stylesheet"
 		/>
-		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0"
+		/>
 		<link rel="stylesheet" href="index.css" />
 	</head>
 	<body>
@@ -36,7 +39,7 @@
 						<h4 class="name">Motivation Synth Pop</h4>
 						<span class="artist">Grand Project</span>
 					</div>
-					<audio>
+					<audio autoplay>
 						<source src="assets/motivation-synth-pop-129226.mp3" type="audio/mpeg" />
 					</audio>
 				</div>
@@ -111,9 +114,12 @@
 				<span class="artist">AlexiAction</span>
 			</div>
 			<div class="prev">prev</div>
-			<div class="play">play</div>
+			<div class="play"><span class="material-symbols-rounded">play_arrow</span></div>
 			<div class="next">next</div>
 		</div>
+
+		<div id="equalizer"></div>
+
 		<script src="index.js"></script>
 	</body>
 </html>
