@@ -161,7 +161,14 @@ body {
 	align-items: center;
 	border-radius: 100%;
 	transform-origin: center left;
-	background: linear-gradient(180deg, rgba(29, 117, 255, 1) 0%, rgba(0, 56, 112, 1) 100%);
+	background-image: radial-gradient(
+		circle at 47.71% 23.83%,
+		#add0ff 0,
+		#689bff 25%,
+		#1b67d8 50%,
+		#003685 75%,
+		#00083d 100%
+	);
 }
 
 .player .play span {
